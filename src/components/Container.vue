@@ -1,15 +1,23 @@
 <template>
   <div>
-    <p>This is the container</p>
+    <IdeaCard v-for='idea in this.ideas' v-bind:idea='idea'/>
   </div>
 </template>
 
 <script>
+import IdeaCard from './IdeaCard';
+
 export default {
   name: 'Container',
+  props: {
+    ideas: Array
+  },
+  components: {
+    IdeaCard
+  },
   data () {
     return {
-      
+
     }
   } 
 }

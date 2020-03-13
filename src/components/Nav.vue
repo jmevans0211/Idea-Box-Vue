@@ -12,6 +12,7 @@
 
 
 <script>
+
 export default {
   name: 'Nav',
   data () {
@@ -27,6 +28,8 @@ export default {
         this.errorMessage = true
       } else {
         this.$emit('inputs', this.titleInput, this.contentInput)
+        this.titleInput = '';
+        this.contentInput = '';
       }
     }
   }
