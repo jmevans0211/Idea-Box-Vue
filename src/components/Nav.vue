@@ -27,7 +27,8 @@ export default {
       if (this.titleInput === '' || this.contentInput === '') {
         this.errorMessage = true
       } else {
-        this.$emit('inputs', this.titleInput, this.contentInput)
+        let id = Date.now()
+        this.$emit('inputs', this.titleInput, this.contentInput, id)
         this.titleInput = '';
         this.contentInput = '';
       }

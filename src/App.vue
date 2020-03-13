@@ -22,8 +22,8 @@ export default {
     }
   },
   methods: {
-    saveIdea: function (titleInput, contentInput) {
-      this.ideas.push({title: titleInput, content: contentInput})
+    saveIdea: function (titleInput, contentInput, id) {
+      this.ideas.push({ title: titleInput, content: contentInput, id: id })
     }
   }
 }
