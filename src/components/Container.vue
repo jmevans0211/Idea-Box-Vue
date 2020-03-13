@@ -1,6 +1,11 @@
 <template>
   <div>
-    <IdeaCard v-for='idea in this.ideas' v-bind:idea='idea' v-bind:id='idea.id'/>
+    <IdeaCard 
+      v-for='idea in this.ideas' 
+      v-bind:idea='idea' 
+      v-bind:id='idea.id'
+      @id='deleteCard'
+    />
   </div>
 </template>
 
@@ -19,7 +24,19 @@ export default {
     return {
 
     }
-  } 
+  },
+  methods: {
+    deleteCard: function (id) {
+      let idea = this.ideas.find(idea => {
+        return idea.id === id
+      });
+
+      let index = this.ideas.indexOf(idea);
+
+      this.ideas.splice(index, 1)
+      
+    }
+  }
 }
 </script>
 

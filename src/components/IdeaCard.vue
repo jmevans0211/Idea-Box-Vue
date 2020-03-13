@@ -19,8 +19,8 @@ export default {
     idea: Object
   },
   methods: {
-    getId: function (id) {
-      console.log(this.idea.id)
+    getId: function () {
+      this.$emit('id', this.idea.id)
     }
   }
 }
