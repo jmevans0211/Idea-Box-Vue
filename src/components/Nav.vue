@@ -34,6 +34,7 @@ export default {
         this.$emit('inputs', this.titleInput, this.contentInput, this.favorited, id)
         this.titleInput = '';
         this.contentInput = '';
+        this.errorMessage = false;
       }
     }
   }

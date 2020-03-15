@@ -5,19 +5,22 @@
       <p>{{idea.content}}</p>
     </body>
     <footer>
-      <img 
+      <img
+        class='img-star'
         v-if='idea.favorited === false'
         src='../../images/star.svg'
         width=20
         v-on:click='toggleFavorite'
       />
-      <img 
+      <img
+        class='img-star' 
         v-if='idea.favorited === true'
         src='../../images/star-active.svg'
         width=20 
         v-on:click='toggleFavorite'
       />
       <img
+        class='img-delete'
         @click.prevent 
         width=15 
         v-on:click='getId'
@@ -58,5 +61,11 @@ export default {
   footer {
     background-color: #FFD465;
     border-top: 3px #36454f solid;
+  }
+  .img-star {
+    margin-right: 50px
+  }
+  .img-delete {
+    margin-left: 50px
   }
 </style>
