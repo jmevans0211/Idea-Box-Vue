@@ -51,4 +51,7 @@ export default {
     background-color: #36454f;
     color: white;
   }
+  input:focus, button:focus {
+    outline: #FFD465 2px solid;
+  }
 </style>
