@@ -34,6 +34,7 @@ export default {
         this.$emit('inputs', this.titleInput, this.contentInput, this.favorited, id)
         this.titleInput = '';
         this.contentInput = '';
+        this.errorMessage = false;
       }
     }
   }
@@ -50,5 +51,8 @@ export default {
   button {
     background-color: #36454f;
     color: white;
+  }
+  input:focus, button:focus {
+    outline: #FFD465 2px solid;
   }
 </style>
