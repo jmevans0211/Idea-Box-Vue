@@ -63,7 +63,8 @@ export default {
     border-top: 3px #36454f solid;
   }
   .img-star {
-    margin-right: 50px
+    margin-right: 50px;
+    transform: translateY(13%);
   }
   .img-delete {
     margin-left: 50px
