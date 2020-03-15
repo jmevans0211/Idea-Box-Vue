@@ -2,8 +2,10 @@
   <header>
     <h1>Idea Box</h1>
     <form>
-      <input v-model.lazy='titleInput' placeholder='Enter Idea Title'></input>
-      <input v-model.lazy='contentInput' placeholder='Enter Idea'></input>
+      <div>
+        <input v-model.lazy='titleInput' placeholder='Enter Idea Title'></input>
+        <input v-model.lazy='contentInput' placeholder='Enter Idea'></input>
+      </div>
       <button @click.prevent v-on:click='getInputs'>Submit Idea!</button>
       <p v-if='errorMessage'>Please enter both inputs</p>
     </form>
@@ -19,7 +21,8 @@ export default {
     return {
       titleInput: '',
       contentInput: '',
-      errorMessage: false
+      errorMessage: false,
+      favorited: false
     }
   },
   methods: {
@@ -28,7 +31,7 @@ export default {
         this.errorMessage = true
       } else {
         let id = Date.now()
-        this.$emit('inputs', this.titleInput, this.contentInput, id)
+        this.$emit('inputs', this.titleInput, this.contentInput, this.favorited, id)
         this.titleInput = '';
         this.contentInput = '';
       }
@@ -38,5 +41,14 @@ export default {
 </script>
 
 <style>
-
+  input, button {
+    height: 40px;
+    font-size: 20px;
+    margin: 5px 10px;
+    width: 25%;
+  }
+  button {
+    background-color: #36454f;
+    color: white;
+  }
 </style>

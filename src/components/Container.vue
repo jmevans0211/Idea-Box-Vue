@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <IdeaCard 
+  <div class='idea-container'>
+    <IdeaCard
       v-for='idea in this.ideas' 
       v-bind:idea='idea' 
       v-bind:id='idea.id'
@@ -33,13 +33,16 @@ export default {
 
       let index = this.ideas.indexOf(idea);
 
-      this.ideas.splice(index, 1)
-      
+      this.ideas.splice(index, 1);
     }
   }
 }
 </script>
 
 <style>
+  .idea-container {
+    display: flex;
+
+  }
 
 </style>
